@@ -1,0 +1,35 @@
+# Flutter
+**/build/
+*.apk
+*.aab
+*.dex
+*.class
+*.o
+.gradle/
+local.properties
+flutter_*.png
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dart
+.dart_tool/
+.packages
+pubspec.lock
+*.dart_tool
+
+# Firebase
+google-services.json
+GoogleService-Info.plist
+*.jks
+*.keystore
+
+# Misc
+key.properties
+.env
