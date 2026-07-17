@@ -63,7 +63,7 @@ class _MatchCard extends StatelessWidget {
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
       child: InkWell(
-        onTap: () => context.go('/partido/${match.id}'),
+        onTap: () => context.push('/partido/${match.id}'),
         borderRadius: BorderRadius.circular(12),
         child: Padding(
           padding: const EdgeInsets.all(12),

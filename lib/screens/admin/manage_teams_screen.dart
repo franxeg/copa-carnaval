@@ -46,7 +46,7 @@ class ManageTeamsScreen extends StatelessWidget {
                       children: [
                         IconButton(
                           icon: const Icon(Icons.people, size: 20),
-                          onPressed: () => context.go(
+                          onPressed: () => context.push(
                               '/admin/equipo/${team.id}/jugadores'),
                         ),
                         IconButton(

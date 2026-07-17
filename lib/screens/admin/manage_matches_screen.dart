@@ -49,7 +49,7 @@ class ManageMatchesScreen extends StatelessWidget {
                             size: 20,
                           ),
                           onPressed: () =>
-                              context.go('/admin/partido/${m.id}/resultado'),
+                              context.push('/admin/partido/${m.id}/resultado'),
                         ),
                         IconButton(
                           icon: const Icon(Icons.delete, size: 20, color: Colors.red),

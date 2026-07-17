@@ -18,6 +18,7 @@ import 'screens/admin/manage_players_screen.dart';
 import 'screens/admin/manage_matches_screen.dart';
 import 'screens/admin/manage_referees_screen.dart';
 import 'screens/admin/edit_match_result_screen.dart';
+import 'widgets/back_to_home.dart';
 import 'theme/app_theme.dart';
 
 final GoRouter _router = GoRouter(
@@ -36,38 +37,48 @@ final GoRouter _router = GoRouter(
     GoRoute(path: '/partidos', builder: (_, __) => const MatchesScreen()),
     GoRoute(
       path: '/partido/:id',
-      builder: (_, state) => MatchDetailScreen(
-          matchId: state.pathParameters['id']!),
+      builder: (_, state) => BackToHome(
+        child: MatchDetailScreen(matchId: state.pathParameters['id']!),
+      ),
     ),
     GoRoute(path: '/equipos', builder: (_, __) => const TeamsScreen()),
     GoRoute(
       path: '/equipo/:id',
-      builder: (_, state) =>
-          TeamDetailScreen(teamId: state.pathParameters['id']!),
+      builder: (_, state) => BackToHome(
+        child: TeamDetailScreen(teamId: state.pathParameters['id']!),
+      ),
     ),
     GoRoute(path: '/eventos', builder: (_, __) => const EventsScreen()),
-    GoRoute(path: '/apuestas', builder: (_, __) => const BettingScreen()),
-    GoRoute(path: '/login', builder: (_, __) => const LoginScreen()),
-    GoRoute(path: '/admin', builder: (_, __) => const AdminDashboard()),
+    GoRoute(
+        path: '/apuestas',
+        builder: (_, __) => const BackToHome(child: BettingScreen())),
+    GoRoute(
+        path: '/login',
+        builder: (_, __) => const BackToHome(child: LoginScreen())),
+    GoRoute(
+        path: '/admin',
+        builder: (_, __) => const BackToHome(child: AdminDashboard())),
     GoRoute(
         path: '/admin/equipos',
-        builder: (_, __) => const ManageTeamsScreen()),
+        builder: (_, __) => const BackToHome(child: ManageTeamsScreen())),
     GoRoute(
       path: '/admin/equipo/:id/jugadores',
-      builder: (_, state) =>
-          ManagePlayersScreen(teamId: state.pathParameters['id']!),
+      builder: (_, state) => BackToHome(
+        child: ManagePlayersScreen(teamId: state.pathParameters['id']!),
+      ),
     ),
     GoRoute(
         path: '/admin/partidos',
-        builder: (_, __) => const ManageMatchesScreen()),
+        builder: (_, __) => const BackToHome(child: ManageMatchesScreen())),
     GoRoute(
       path: '/admin/partido/:id/resultado',
-      builder: (_, state) =>
-          EditMatchResultScreen(matchId: state.pathParameters['id']!),
+      builder: (_, state) => BackToHome(
+        child: EditMatchResultScreen(matchId: state.pathParameters['id']!),
+      ),
     ),
     GoRoute(
         path: '/admin/arbitros',
-        builder: (_, __) => const ManageRefereesScreen()),
+        builder: (_, __) => const BackToHome(child: ManageRefereesScreen())),
   ],
 );
 

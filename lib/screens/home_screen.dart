@@ -51,18 +51,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           width: 200,
                           height: 200,
                         ),
-                        const SizedBox(height: 8),
-                        Text(
-                          t?.name ?? 'Copa Carnaval',
-                          style: const TextStyle(
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
-                            color: AppTheme.primaryYellow,
-                          ),
-                        ),
                         const SizedBox(height: 4),
                         Text(
-                          t?.city ?? 'Lincoln',
+                          t?.city ?? 'Lincoln 2026',
                           style: const TextStyle(fontSize: 16, color: Colors.grey),
                         ),
                       ],
@@ -79,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton.icon(
-                        onPressed: () => context.go('/apuestas'),
+                        onPressed: () => context.push('/apuestas'),
                         icon: const Icon(Icons.casino),
                         label: const Text('Ir a Apuestas'),
                       ),
@@ -90,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton.icon(
-                        onPressed: () => context.go('/admin'),
+                        onPressed: () => context.push('/admin'),
                         icon: const Icon(Icons.admin_panel_settings),
                         label: const Text('Panel Admin'),
                         style: ElevatedButton.styleFrom(
@@ -233,7 +224,7 @@ class _InfoCard extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton.icon(
-                  onPressed: () => context.go('/login'),
+                  onPressed: () => context.push('/login'),
                   icon: const Icon(Icons.login),
                   label: const Text('Iniciar sesión para apostar'),
                   style: OutlinedButton.styleFrom(

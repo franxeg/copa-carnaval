@@ -45,7 +45,7 @@ class TeamsScreen extends StatelessWidget {
                     title: Text(teams[i].name,
                         style: const TextStyle(fontWeight: FontWeight.w500)),
                     trailing: const Icon(Icons.chevron_right),
-                    onTap: () => context.go('/equipo/${teams[i].id}'),
+                    onTap: () => context.push('/equipo/${teams[i].id}'),
                   ),
                 ),
               );

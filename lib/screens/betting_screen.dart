@@ -27,7 +27,7 @@ class BettingScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 18)),
                 const SizedBox(height: 16),
                 ElevatedButton(
-                  onPressed: () => context.go('/login'),
+                  onPressed: () => context.push('/login'),
                   child: const Text('Iniciar Sesión'),
                 ),
               ],
